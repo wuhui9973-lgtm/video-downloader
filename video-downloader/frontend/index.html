@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全能视频下载器 - 支持抖音/快手/小红书/B站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 全能视频下载器</h1>
+            <p class="subtitle">支持抖音 · 快手 · 小红书 · B站 · 西瓜视频 · 微博</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="platform-icons" id="platformIcons">
+                    <span class="platform-icon" data-platform="douyin" title="抖音">抖音</span>
+                    <span class="platform-icon" data-platform="kuaishou" title="快手">快手</span>
+                    <span class="platform-icon" data-platform="xiaohongshu" title="小红书">小红书</span>
+                    <span class="platform-icon" data-platform="bilibili" title="B站">B站</span>
+                    <span class="platform-icon" data-platform="xigua" title="西瓜视频">西瓜</span>
+                    <span class="platform-icon" data-platform="weibo" title="微博">微博</span>
+                </div>
+                
+                <div class="input-wrapper">
+                    <input type="text" id="videoUrl" placeholder="📋 请粘贴视频链接..." autocomplete="off">
+                    <button id="parseBtn" class="btn-parse">解析</button>
+                </div>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <span>正在解析视频...</span>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="video-info">
+                    <div class="cover-wrapper">
+                        <img id="videoCover" src="" alt="视频封面">
+                        <span class="duration" id="videoDuration"></span>
+                    </div>
+                    <div class="info-content">
+                        <h3 id="videoTitle">视频标题</h3>
+                        <p class="author" id="videoAuthor"></p>
+                        <div class="platform-badge" id="platformBadge"></div>
+                    </div>
+                </div>
+
+                <div class="download-options" id="downloadOptions">
+                    <!-- 动态生成下载选项 -->
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-message">
+                    <span class="error-icon">❌</span>
+                    <p id="errorText">解析失败，请检查链接是否正确</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>💡 提示：本工具仅供学习交流，请勿用于商业用途或下载侵权内容</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
